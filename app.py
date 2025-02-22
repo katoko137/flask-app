@@ -8,6 +8,7 @@ from database import create_table
 # user tableを初期化
 create_table()
 deleteUser()
+print("はじまったよ")
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -55,8 +56,9 @@ def game(username):
 @socketio.on('start_game')
 def start_game():
     update_players_info()
+    print("スタートゲーム")
     emit('start_game_f', {}, broadcast=True)
 
 
 if __name__ == "__main__":
-    socketio.run(app,debug=True)
+    socketio.run(app,port=10000,debug=True)
