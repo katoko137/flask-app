@@ -61,4 +61,4 @@ def start_game():
 
 
 if __name__ == "__main__":
-    socketio.run(app,port=10000,debug=True)
+    socketio.run(app,port=10000,debug=False)
