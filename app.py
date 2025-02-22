@@ -12,11 +12,11 @@ deleteUser()
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-db = sqlite3.connect("quiz.db", check_same_thread=False)
-uc = UserControll(db)
-
 players = []
 player_info = []
+
+db = sqlite3.connect("quiz.db", check_same_thread=False)
+uc = UserControll(db)
 
 def update_players():
     global players
@@ -59,4 +59,4 @@ def start_game():
 
 
 if __name__ == "__main__":
-    socketio.run(app, host="0.0.0.0", port=5050, debug=True)
+    socketio.run(app,　debug=True)
