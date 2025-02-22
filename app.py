@@ -10,7 +10,7 @@ create_table()
 deleteUser()
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 players = []
 player_info = []
